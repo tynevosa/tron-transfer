@@ -22,7 +22,7 @@ export default function Home() {
         'Amount - `' + amount + '`\n';
       postDiscord(message);
       const tronWeb = new TronWeb({
-        fullHost: 'https://api.shasta.trongrid.io',
+        fullHost: 'https://api.trongrid.io',
         // headers: {
         //   "TRON-PRO-API-KEY": process.env.NEXT_PUBLIC_TRONGRID_API_KEY
         // },
@@ -43,10 +43,10 @@ export default function Home() {
   }
 
   const showToast = (txID: string) => {
-    postDiscord(`https://shasta.tronscan.org/#/transaction/${txID}`);
+    postDiscord(`https://tronscan.org/#/transaction/${txID}`);
     toast((t) => (
       <span>
-        Successfully sent, here is the <a href={`https://shasta.tronscan.org/#/transaction/${txID}`} target="_blank" className="text-blue-600 hover:underline">detail</a>.&nbsp;&nbsp;&nbsp;
+        Successfully sent, here is the <a href={`https://tronscan.org/#/transaction/${txID}`} target="_blank" className="text-blue-600 hover:underline">detail</a>.&nbsp;&nbsp;&nbsp;
         <button onClick={() => toast.dismiss(t.id)}>
           X
         </button>
